@@ -1,0 +1,511 @@
+@page
+@model IndexModel
+
+<script src="~/js/crownandskull.js"></script>
+
+<div class="p-5 bg-primary text-white text-center">
+    <h1>Jay Conrad </h1>
+    <h3>Full Stack .Net Developer</h3>
+    <p><i>Put my experience to work for you!</i></p>
+</div>
+
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <div class="container-fluid">
+        <ul class="nav nav-pills">
+            <li class="nav-item">
+                <a class="nav-link active" data-bs-toggle="pill" href="#HomePage">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="pill" href="#FunStuff">Fun Stuff</a>
+            </li>
+            @*<li class="nav-item">
+                <a class="nav-link" style="float:right;" data-bs-toggle="pill" href="#Login">Login</a>
+            </li>*@
+        </ul>
+    </div>
+</nav>
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="tab-content">
+            <div id="Login" class="tab-pane container fade">
+                <div class="col-sm-8">
+                    <div class="card" style="width:243px !important;">
+                        <div class="card-header align-content-center"><b>Enter Login Info</b></div>
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <label class="form-label"><input type="text" class="form-control" id="loginName" placeholder="Username" /></label><br />
+                                    <label class="form-label"><input type="password" class="form-control" id="pw" placeholder="Password" /></label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <div class="row">
+                                        &nbsp;&nbsp;&nbsp;
+                                        <button class="btn btn-primary" id="btnLogin" style="float:left;width:90px;padding-left:10px;">Login</button>    
+                                        <div style="width:18px;">&nbsp;</div>
+                                        <button class="btn btn-secondary" id="btnCancelLogin" style="float:left; width:90px;">Cancel</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-12">
+                                    <a class="link-primary" href="#" style="float:left;">Register</a>
+                                    <a class="link-primary" href="#" style="float:left;padding-left:32px;">Forgot Password</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="HomePage" class="tab-pane container active">
+                <div class="col-sm-4">
+                    <h2>About Me</h2>
+                    <div class="fakeimg"><img src="~/media/images/wally.jpg" /></div>
+                    <p></p>
+                    <h3 class="mt-4">Some Links</h3>
+                    <p>Lorem ipsum dolor sit ame.</p>
+                    <ul class="nav nav-pills flex-column">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#">About Me</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Link</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Link</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link disabled" href="#">Disabled</a>
+                        </li>
+                    </ul>
+                    <hr class="d-sm-none">
+                </div>
+                <div class="col-sm-8">
+                <h2>TITLE HEADING</h2>
+                <h5>Title description, Dec 7, 2020</h5>
+                <div class="fakeimg">Fake Image</div>
+                <p>Some text..</p>
+                <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+
+                <h2 class="mt-5">TITLE HEADING</h2>
+                <h5>Title description, Sep 2, 2020</h5>
+                <div class="fakeimg">Fake Image</div>
+                <p>Some text..</p>
+                <p>Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+                </div>
+            </div>
+            <div id="FunStuff" class="tab-pane container fade">
+                <input type="hidden" id="HeroPoints" value="50" />
+                <input type="hidden" id="FlawCount" value="0" />
+                <input type="hidden" id="PreviousCoreAbility" value="-1" />
+                <input type="hidden" id="MaxSkills" value="10" />
+                <input type="hidden" id="MaxEquipment" value="10" />
+                <input type="hidden" id="CurrentSkillCount" value="0" />
+                <div class="row">
+                    <div class="col-sm-3">
+                        <h2 style="font-family: 'Century Gothic'">Crown & Skull</h2>
+                        <hr />
+                        <button type="button" class="btn btn-primary" data-bs-toggle="collapse" data-bs-target="#csCharGen">Character Generator</button>
+                    </div>
+                    <div class="col-sm-9">
+                        <div class="card collapse fade" id="csCharGen">
+
+                                    <div class="card-header">
+                                        <div class="container">
+                                            <div class="row">
+                                                <img style="height:40px;width:300px;display:inline;" src="https://crownskull.runehammer.online/assets/images/crownskulllogotexthorz.png" />
+                                                <h4 class="card-title" style="font-family: 'Century Gothic'">&nbsp;&nbsp;Character Generator</h4>
+                                            </div>                                     
+                                        </div>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-8">
+                                                <div class="row">
+                                                    <div class="col-12 align-content-start">
+                                                        <label class="form-label" style="float:left; font-family:'Century Gothic'; font-weight:bold; display:inline;">Hero Points:&nbsp;
+                                                            <span id="dspHeroPoints">50</span>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div class="row">
+                                                    <div class="col-6 align-content-start">
+                                                        <label class="form-label" style="float:left; font-family:'Century Gothic'; font-weight:bold; display:inline;">Character Name<input id="txtName" class="form-control txtBoxW250" type="text" placeholder="Character Name" /></label>
+                                                    </div>
+                                                </div>
+                                            
+                                                <div class="row">
+                                                    <div class="col-8">
+                                                    <div class="row">
+                                                        <div class="col-12">
+                                                            <label class="form-label" style="float:left;font-family:'Century Gothic'; font-weight:bold;">
+                                                                Lineage
+                                                                <select onchange="rndLineage('#ddlLineage');" id="ddlLineage" class="form-control txtBoxW250">
+                                                                    <option value="-1">Please select...</option>
+                                                                    <option value="R">Random Choice</option>
+                                                                    <option value="1" title="The so-called high elves are known for long ears, sharp features, and elegant limbs.">Tall, Slender Elf</option>
+                                                                    <option value="2" title="The wood elves are almost human in appearance, save slightly pointed ears. Some even have beards.">Rugged Woodland Elf</option>
+                                                                    <option value="3" title="One of a royal or ancient bloodline.">Elf with Regal, Flawless Presence</option>
+                                                                    <option value="4" title="A statuesque figure...defined, powerful.">Muscle-Bound Elven Athlete</option>
+                                                                    <option value="5" title="Some dwarves are less bulky, but have larger feet, making them skilled climbers and distance walkers.">Sure-Footed Stout Folk</option>
+                                                                    <option value="6" title="Known among the stout as 'guntrnekke,' this type is heavily muscled, with square features and a strong jaw.">Thick-Necked Dwarf</option>
+                                                                    <option value="7" title="Ah the stout folk revelers! A life of eating and drinking shows on this huggable figure.">Jolly, Well-Fed Dwarf</option>
+                                                                    <option value="8" title="Some dwarves spend decades underground, gaining this uncanny, colorless look in the eyes.">Dark-Eyed Stout Folk</option>
+                                                                    <option value="9" title="The largest folk in the realm.">Towering Human</option>
+                                                                    <option value="10" title="A life of hardship and struggle gives gravity and presence to your expression.">Human with Drawn, Serious Features</option>
+                                                                    <option value="11" title="The happy, optimistic folk of many places.">Bright-Eyed Human</option>
+                                                                    <option value="12" title="Stricken with years or injury, these folk struggle on.">Afflicted Human</option>
+                                                                    <option value="13" title="The smallest of Proud Foots are whiskered from head to toe, with exaggerated front teeth and small, deep-set eyes.">Furry Little Proudfoot</option>
+                                                                    <option value="14" title="Reaching up to 5' tall, these proud folk are almost human in appearance, save the refusal to wear shoes.">Robust Proudfoot</option>
+                                                                    <option value="15" title="Dimunitive, knobby-nosed, with floppish hair.">Proudfoot Citizen</option>
+                                                                    <option value="16" title="Ah, the river folk! Silly, floppy ken with large hands, gleaming, colorful eyes, and creative haristyles.">Lighthearted Proudfoot</option>
+                                                                    <option value="17" title="Light green folk, 4-5 feet high, who squat often.">Green Frog-Kin</option>
+                                                                    <option value="18" title="Spotted fog folk, browns and grays, thickly muscled, with a bright white throat pouch and wide-set eyes.">Mottled Frog-Kin</option>
+                                                                    <option value="19" title="5 to 6 feet tall, more suited to walking than leaping.">Frog-Kin Giant</option>
+                                                                    <option value="20" title="Bright yellow skin, the smallest of the frog people.">Gold Frog-Kin</option>
+                                                                </select>
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-12">
+                                                            <label class="form-label" style="float:left; font-family:'Century Gothic'; font-weight:bold;">
+                                                                Equipment
+                                                                <select onchange="rndEquipment('#ddlEquipment');" id="ddlEquipment" class="form-control txtBoxW250">
+                                                                    <option value="-1">Please Select...</option>
+                                                                    <option value="R">Random Choice</option>
+                                                                    <option value="1" title="You prefer the heft and balance of 'headed' weapons, and their crushing, chopping, fighting style.">Axes and Hammers</option>
+                                                                    <option value="2" title="With a skilled fit, perfectly comfortable.">Armor from Head to Toe</option>
+                                                                    <option value="3" title="You have eschewed versatility in favor of specialization. You and your weapon are one. A focused fighter.">A Single, Huge Weapon</option>
+                                                                    <option value="4" title="You are outfitted with belts and pouches with all manner of implements and handy doo-dads.">Tools and Gadgets</option>
+                                                                    <option value="5" title="A simple kit for the pragmatic delver.">Mining Gear</option>
+                                                                    <option value="6" title="Clutter and encumbrance is bothersome.">Little More than Robes</option>
+                                                                    <option value="7" title="You are an archer through and through. You may carry a backup, smaller bow, or extra quiver, but seldom need it.">Bow and Arrow</option>
+                                                                    <option value="8" title="Not your only gear, but your closet ally in a pinch.">A Steel Shield</option>
+                                                                    <option value="9" title="You revel in oddities, artifacts, ingredients, trinkets, curios, wands, and jewelry.">Vials and Magical Baubles</option>
+                                                                    <option value="10" title="You carry a hefty spell book and twisted stick.">Grimoire and Staff</option>
+                                                                    <option value="11" title="Learned in a military fighting style, you prefer the reach, piercing, and versatility of a 10' spear, halbert, or bill hook.">A Mighty Spear</option>
+                                                                    <option value="12" title="So few things in this world can you trust...swords, magic, beasts? No. But these? These you can trust.">Fishing Pole, Paddle, and Net</option>
+                                                                    <option value="13" title="Soft materials for stealth.">Lightweight Cloak and Quiet Boots</option>
+                                                                    <option value="14" title="The armor kit of a soldier.">Chainmail and Emblazoned Tabard</option>
+                                                                    <option value="15" title="Your odd interests make this critical.">A Many-Pocketed Great-Cloak</option>
+                                                                    <option value="16" title="You possess a suit of protective gear from the frog empire: slat plates, leather ties, 'gunomo' undercoat.">Armor from The Marsh Lands</option>
+                                                                    <option value="17" title="Walk tall with a high-topped steel helmet, horsehair crest, top spike, or bannered brim.">A Bold-Crested Helm</option>
+                                                                    <option value="18" title="You carry a collection of beads, vestments, and blessed objects that invoke feelings of divinity.">Charms and Holy Symbols</option>
+                                                                    <option value="19" title="Black powder weapons are your speciality.">Flintlock Guns and Kit</option>
+                                                                    <option value="20" title="The curved blades, flexible steel, red-laquer hafts, and brass guards of flog-folk blades are your preferred equipment.">Froggish Weapons</option>
+                                                                </select>
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-12">
+                                                            <label class="form-label" style="float:left; font-family: 'Century Gothic'; font-weight:bold;">
+                                                                It all started when...
+                                                                <select onchange="rndMyPast('#ddlMyPast');" id="ddlMyPast" class="form-control txtBoxW250">
+                                                                    <option value="-1">Please Select...</option>
+                                                                    <option value="R">Random Choice</option>
+                                                                    <option value="1" title="Madmen and fools! I escaped in the night, never to return!">I left the cult...</option>
+                                                                    <option value="2" title="Outsiders may never understand us, but our great leader sees many things. My purpose was found when I joined them...">I joined the Cult</option>
+                                                                    <option value="3" title="Our lord rallied my people to mighty deeds, and I gave answer, taking the oath.">Our village was called to arms...</option>
+                                                                    <option value="4" title="It guides me...I can't explain how...">When I found the Red Crystal</option>
+                                                                    <option value="5" title="For so long was I alone in this world, so when word of my family came, I set out...">Rumors of my lost kin surfaced...</option>
+                                                                    <option value="6" title="I was very young...a nomad ever since...">I was taken prisoner...</option>
+                                                                    <option value="7" title="A great crack broke the land, revealing darkness below. The monsters that arose set my life in motion.">The fissure split open...</option>
+                                                                    <option value="8" title="To this day I have yet to find him...">My brother disappeared...</option>
+                                                                    <option value="9" title="I was chosen to find the evil cause of the blight...">The crops failed...</option>
+                                                                    <option value="10" title="Our town headman chose a handful of us for a higher purpose. I was sent into the wide world, and never looked back.">The Alderman came...</option>
+                                                                    <option value="11" title="The weird stones and starfallen carvings of those moldering walls changed us...posing too many questions...">We discovered the ruins...</option>
+                                                                    <option value="12" title="Our feet just took us too far!">We went searching for better fishing...</option>
+                                                                    <option value="13" title="In the chaos, folk running about, I was tossed into the water and almost drowned. Since then, my days have darkened.">The rats came ashore...</option>
+                                                                    <option value="14" title="My mother stayed behind so that we could escape...she knew the ash clouds brought dark portents.">The sky went dark...</option>
+                                                                    <option value="15" title="I've been keeping them out of trouble ever since...">I met these ninnies...</option>
+                                                                    <option value="16" title="THey leave nothing alive, so we fled.">The wolves appeared...</option>
+                                                                    <option value="17" title="The runes never lie, so I seek this unknown destiny.">I was chosen...</option>
+                                                                    <option value="18" title="It's a humming, glowing, thing. I need answers. Those I ask all seem to have a different story.">I inherited this jewel...</option>
+                                                                    <option value="19" title="I completed my training, somehow, and was sent into the wild world to become a teacher someday.">My master released me...</option>
+                                                                    <option value="20" title="The limits of those close-minded folk were too much to bear. Someone had to choose the hard path. That was me.">I betrayed my Oath...</option>
+                                                                </select>
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-12">
+                                                            <label class="form-label" style="float:left; font-family: 'Century Gothic'; font-weight:bold;">
+                                                                But now I...
+                                                                <select onchange="rndNowI('#ddlNowI');" id="ddlNowI" class="form-control txtBoxW250">
+                                                                    <option value="-1">Please Select...</option>
+                                                                    <option value="R">Random Choice</option>
+                                                                    <option value="1" title="My purpose leaves evil no quarter.">Seek and Destroy Evil-Doers</option>
+                                                                    <option value="2" title="If there is such a mighty arcane force in the world, why not me to wield it?">Simply Gather Power</option>
+                                                                    <option value="3" title="WHo doesn't like a good jest? It's all in fun!">Make a Mess of Things</option>
+                                                                    <option value="4" title="There is great value in the service of others.">Protect My Friends</option>
+                                                                    <option value="5" title="I have released the upturned nose of morality and destiny. I do jobs. I am content.">Sell my Skills for Coin</option>
+                                                                    <option value="6" title="Those who topple the boated fools in power are my allies. Our lives are the weapon they cannot deflect.">Have joined the Rebellion</option>
+                                                                    <option value="7" title="No danger is too great, no task too daunting.">Will find What I Seek</option>
+                                                                    <option value="8" title="I ask nothing of the world, save its majesty.">Humbly Wander</option>
+                                                                    <option value="9" title="My loyalties are well-earned and absolute.">Answer to a New Master</option>
+                                                                    <option value="10" title="The visions won't stop. Gods, the horrors it shows me, even in waking moments!">Am driven mad by nightmares</option>
+                                                                    <option value="11" title="When the twilight makes red the clouds, or a clap of thunder rings...I can hear some distant sound...beckoning.">Hear a call from afar</option>
+                                                                    <option value="12" title="A xozy hearth and soft bed await.">Just want a place to call home.</option>
+                                                                    <option value="13" title="I will not wind up in poverty and rot after all this. I need to find a true nest egg.">Must secure my fortune</option>
+                                                                    <option value="14" title="Only mighty deeds will earn me a seat with the elders and mentors. There must be a way...">Fight to earn my place</option>
+                                                                    <option value="15" title="I know it is out there...the masterpiece of craft told of in legends. I will be the one to find it.">Pursue a masterwork</option>
+                                                                    <option value="16" title="They will pay. I will be their angel of death.">Will have my revenge.</option>
+                                                                    <option value="17" title="I am but a vessel, and if it be their will, they will act through me. I am but a conduit, a pilgrim.">Live for the Gods' Will</option>
+                                                                    <option value="18" title="I live a sensible life of honorable work. Given enough time, I'll find leisure at last.">Am gainfully employed</option>
+                                                                    <option value="19" title="I go where I please, and slay who I choose.">Answer to No One</option>
+                                                                    <option value="20" title="For whatever reasons, I carry the mantle of leadership for this troop. I mean to make it matter, and see deeds done.">Lead my allies to glory.</option>
+                                                                </select>
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                </div>
+                                       
+                                            </div>
+                                            <div class="col-4 align-content-end">
+                                                <img src="~/media/images/wally.jpg" />
+                                            </div>                                            
+                                        </div>   
+                                    <div class="row">
+                                        <button class="btn btn-secondary" data-bs-toggle="collapse" data-bs-target="#Flaws">Flaws (Optional)</button>
+                                        <div class="container collapse" id="Flaws">
+                                            <div class="row">
+                                                <div class="col-3">
+                                                    <div class="form-check" title="You have a specific vice you cannot deny. If you can't get your fix, the GM will ask for a roll vs. attrition in some form.">
+                                                        <input onclick="toggleFlaw('#cbxAddict');" type="checkbox" class="form-check-input" id="cbxAddict" value="1" />&nbsp;&nbsp;<span>Addict</span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-3">
+                                                    <div class="form-check" title="You frown on possessions. Never exceed 5 equipment.">
+                                                <input onclick="toggleFlaw('#cbxAescetic');" type="checkbox" class="form-check-input" id="cbxAescetic" value="2" />&nbsp;&nbsp;<span>Aescetic</span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-3">
+                                                    <div class="form-check" title="You are old! Muscle, Jump, Climber, Breakfall, and Stealth skills may not exceed 9, but you earn respect for your advanced age.">
+                                                <input onclick="toggleFlaw('#cbxAncient');" type="checkbox" class="form-check-input" id="cbxAncient" value="3" />&nbsp;&nbsp;<span>Ancient</span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-3">
+                                                    <div class="form-check" title="You've done things..Terrible things, and people know about it. You've done harm, broken oaths, or let someone down.">
+                                                <input onclick="toggleFlaw('#cbxBadRep');" type="checkbox" class="form-check-input" id="cbxBadRep" value="4" />&nbsp;&nbsp;<span>Bad Reputation</&nbsp;&nbsp;>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-3">
+                                                    <div class="form-check" title="When faced with a difficult choice, choose randomly.">
+                                                <input onclick="toggleFlaw('#cbxCrazy');" type="checkbox" class="form-check-input" id="cbxCrazy" value="5" />&nbsp;&nbsp;<span>Crazy</span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-3">
+                                                    <div class="form-check" title="Where'd you put that? When seeking anything but your most-used items and armor, roll 9 or less on a D20 to find it.">
+                                                <input onclick="toggleFlaw('#cbxDisorganized');" type="checkbox" class="form-check-input" id="cbxDisorganized" value="6" />&nbsp;&nbsp;<span>Disorganized</span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-3">
+                                                    <div class="form-check" title="Your drinking wavers between revelry and tomfoolery. Beer and wine drain your pockets and frustrate your friends.">
+                                                <input onclick="toggleFlaw('#cbxDrunkard');" type="checkbox" class="form-check-input" id="cbxDrunkard" value="7" />&nbsp;&nbsp;<span>Drunkard</span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-3">
+                                                    <div class="form-check" title="You are paid or oathsworn to a lord or employer. Disobey at your own peril!">
+                                                <input onclick="toggleFlaw('#cbxEmployed');" type="checkbox" class="form-check-input" id="cbxEmployed" value="8" />&nbsp;&nbsp;<span>Employed</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-3">
+                                                    <div class="form-check" title="Tempted by treasure, roll 6 or less on a D20 to resist the urge.">
+                                                <input onclick="toggleFlaw('#cbxGreedy');" type="checkbox" class="form-check-input" id="cbxGreedy" value="9" />&nbsp;&nbsp;<span>Greedy</span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-3">
+                                                    <div class="form-check" title="You have been wronged, and hold it against an individual or group, unjustly. When you encounter them, you behave terribly.">
+                                                <input onclick="toggleFlaw('#cbxGrudge');" type="checkbox" class="form-check-input" id="cbxGrudge" value="10" />&nbsp;&nbsp;<span>Grudge</span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-3">
+                                                    <div class="form-check" title="You are impatient, leaping into situations without planning or reservation. Only take action in phase 1 or 2.">
+                                                        <input onclick="toggleFlaw('#cbxImpetuous');" type="checkbox" class="form-check-input" id="cbxImpetuous" value="11" />&nbsp;&nbsp;<span>Impetuous</span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-3">
+                                                    <div class="form-check" title="This common flaw should be taken a few times in a character's lifetime. An Injury brings a -1 maximum skill inventory.">
+                                                <input onclick="toggleFlaw('#cbxInjured');" type="checkbox" class="form-check-input" id="cbxInjured" value="12" />&nbsp;&nbsp;<span>Injured</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-3">
+                                                    <div class="form-check" title="Hey, I'm just a kid! Never exceed 6 skills.">
+                                                <input onclick="toggleFlaw('#cbxKid');" type="checkbox" class="form-check-input" id="cbxKid" value="13" />&nbsp;&nbsp;<span>Just a Kid</span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-3">
+                                                    <div class="form-check" title="What's that? You hear that? You invent your own boogie men, and sew doubt among others. NPCs will be hesitant to trust you.">
+                                                <input onclick="toggleFlaw('#cbxParanoid');" type="checkbox" class="form-check-input" id="cbxParanoid" value="14" />&nbsp;&nbsp;<span>Paranoid</span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-3">
+                                                    <div class="form-check" title="Fear of a common thing. In its presence, no roll can succeed.">
+                                                <input onclick="toggleFlaw('#cbxPhobia');" type="checkbox" class="form-check-input" id="cbxPhobia" value="15" />&nbsp;&nbsp;<span>Phobia</span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-3">
+                                                    <div class="form-check" title="You have a nemesis out there...somewhere...hunting you.">
+                                                <input onclick="toggleFlaw('#cbxPursued');" type="checkbox" class="form-check-input" id="cbxPursued" value="16" />&nbsp;&nbsp;<span>Pursued</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-3">
+                                                    <div class="form-check" title="You were born frail. Survival and Resist skills cannot exceed 9.">
+                                                <input onclick="toggleFlaw('#cbxSickly');" type="checkbox" class="form-check-input" id="cbxSickly" value="17" />&nbsp;&nbsp;<span>Sickly</span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-3">
+                                                    <div class="form-check" title="If you make up your mind, only a D20 contest with another player or NPC will sway you.">
+                                                <input onclick="toggleFlaw('#cbxStubborn');" type="checkbox" class="form-check-input" id="cbxStubborn" value="18" />&nbsp;&nbsp;<span>Stubborn</span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-3">
+                                                    <div class="form-check" title="You'd rather let others lead. Only take action in phase 4 or 5.">
+                                                <input onclick="toggleFlaw('#cbxTimid');" type="checkbox" class="form-check-input" id="cbxTimid" value="19" />&nbsp;&nbsp;<span>Timid</span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-3">
+                                                    <div class="form-check" title="No matter how many rabbit's feet you carry, you have a penchant for comical mishaps and crit fail on a 16+'">
+                                                <input onclick="toggleFlaw('#cbxUnlucky');" type="checkbox" class="form-check-input" id="cbxUnlucky" value="20" />&nbsp;&nbsp;<span>Unlucky</span>
+                                                    </div>
+                                                </div>
+                                            </div>                                               
+                                        </div>
+                                        <div class="container" id="SelFlaws">
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <span id="selFlaw1"></span>
+                                                </div>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <span id="selFlaw2"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <hr />
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-5" style="margin-top:5px;">
+                                            <label class="form-label" style="float:left; font-family: 'Century Gothic'; font-weight:bold;">Core Ability:&nbsp;&nbsp;<select onchange="calcHeroPoints('#ddlCoreAbility');" id="ddlCoreAbility">
+                                                    <option value="-1">Please Select</option>
+                                                    <option value="R">Random Choice</option>
+                                                    <option value="1" title="You have been trained as a soldier who knows how to hit hard. When you roll maximum damage, roll again. There is no limit to the number of times the dice can 'explode.'">Battlemaster</option>
+                                                    <option value="2" title="You are fast, efficient, and adept at taking on multiple opponents in close quarters. All of your melee attacks may hit 2 foes with a single damage roll.">Brutal Fighter</option>
+                                                    <option value="3" title="Master of wilderness. Gain the Tracking and Hunting skills for free, each at 9. When outdoors, gain +3 on all skills.">Druid</option>
+                                                    <option value="4" title="You have masterful intuition. Gain the Investigation, Streetwise, and Oratory skills at a value of 7 for free.">Empath</option>
+                                                    <option value="5" title="You blend into shadows with ease. When enemies are attacking you and your allies, they will target you last.">Go Unnoticed</option>
+                                                    <option value="6" title="A master of finding ways through rock and cavern. Gain the Climber and Breakfall skills at 10. In mountains or underground, you also have a Scout skill of 15.">Mountaineer</option>
+                                                    <option value="7" title="Your Faith skill grows by 2 with a successful cast, and maxes at 16. Additionally, destroy 1D6 weak undead (such as zombies, shamblers, or skeletons) as an Exhausting spell.">Paragon of Faith</option>
+                                                    <option value="8" title="When using a shield, change a failed Defense roll by an ally into a success once per round, if they are nearby.">Protector</option>
+                                                    <option value="9" title="You cast spells with flair and oratory. You can never use 'silent' or 'still' spells. As a default, though, your spells work on a target that can HEAR you cast. Upgrade from there as normal.">Spellsinger</option>
+                                                    <option value="10" title="Roll an extra damage die with all ranged weapons, and ignore 1 DEF on all targets when using ranged weapons.">Uncanny Shot</option>
+                                                    <option value="11" title="When a combat encounter starts, choose 1 ally. Inspire them with a command to fight! Their first attack does maximum damage, and they cannot be harmed for the remainder of that round.">Veteran Commander</option>
+                                                    <option value="12" title="You don't just cast spells; you are a conduit of incredible power. When casting, effects and outputs of all magic you cast are maximized on a Magic skill roll of 6 or less on a D20.">Wizard Savant</option>
+                                                </select>
+                                            </label>
+                                        </div>
+                                        <div class="col-7">
+                                            <span id="dspCoreAbility" style="font-family:'Century Gothic'"></span>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-12" style="margin-top:5px;">
+                                            <label class="form-label" style="float:left; font-family: 'Century Gothic'; font-weight:bold;">Skills:&nbsp;&nbsp;
+                                                <select id="ddlSkills">
+                                                    <option value="-1">Please Select...</option>
+                                                    <option value="1" title="Charm or induce an animal companion to perform simple actions. Can only be used with one anumal at a time.">Animal Training</option>
+                                                    <option value="2" title="In arm's length of an ally, roll this skill to repair 1 damaged armor item in their inventory. On a failure, the armor is destroyed.">Armorer</option>
+                                                    <option value="3" title="Fight with fists and feet. Two uses: 1) Roll the skill to grapple or stun a for for 1 round. 2) Use a D6 when attacking without a weapon.">Brawling</option>
+                                                    <option value="4" title="Half damage taken in long falls if this skill rolled successfully.">Breakfall</option>
+                                                    <option value="5" title="Climb any reasonable surface with texture, holds, or crevasses.">Climber</option>
+                                                    <option value="6" title="Roll to outwit bureaucrats or royalty.">Courtier</option>
+                                                    <option value="7" title="Take on alternate identities. More difficult with acquaintances.">Disguise</option>
+                                                    <option value="8" title="Used to avoid attacks that armor cannot protect against.">Evade</option>
+                                                    <option value="9" title="The ability to call forth miracles with prayer (see Divine Magic).">Faith</option>
+                                                    <option value="10" title="A skill used to find plants in the Herbalists' Guide.">Forage</option>
+                                                    <option value="11" title="Cheat or overcome casino games with devious attention.">Gambling</option>
+                                                    <option value="12" title="Acquire food in natural environments, enough for a group.">Hunting</option>
+                                                    <option value="13" title="Uncover hidden information, history, or subtle facts.">Investigate</option>
+                                                    <option value="14" title="Leap with uncanny agility, out-jumping the untrained by 3-fold.">Jump</option>
+                                                    <option value="15" title="Roll to recall details on a single topic or area of expertise.">Knowledge</option>
+                                                    <option value="16" title="Be fluent with a successful roll. Only spend here for languages outside what would be normal for your folk to speak.">Languages</option>
+                                                    <option value="17" title="Discern lost or unknown language, glyphs, or writing.">Linguist</option>
+                                                    <option value="18" title="Disable non-magical locking devices with tools.">Lockpicking</option>
+                                                    <option value="19" title="Used to contain infernal or unstable magic, or as a resistance to spells. Also used to wild magic and anti-magic.">Magic</option>
+                                                    <option value="20" title="Recover a crossed-off skill on yourself or an ally, with a touch. A failed roll renders that skill recoverable only by rest.">Medical</option>
+                                                    <option value="21" title="Navigate or excavate underground with perfect direction and skill.">Mining</option>
+                                                    <option value="22" title="You have a knack for leverage, a powerful grip, and raw strength. Roll this skill to bend bars, lift the unliftable, or brace against wind.">Muscle</option>
+                                                    <option value="23" title="Fascinate or deceive with stories, bravado and sheer charisma.">Oratory</option>
+                                                    <option value="24" title="Acquire small or simple items on unsuspecting targets.">Pickpocket</option>
+                                                    <option value="25" title="Any working skill or commerce skill, its tools and ways.">Profession</option> 
+                                                    <option value="26" title="Mend a damaged weapon or item. Not usable on armor. A failed roll destroys the item. 'I think I dropped a piece...'">Repair</option>
+                                                    <option value="27" title="You are hearty. Roll to ignore extreme cold, poison, or too many mugs of ale. Hold your breath or fight back harmful magic with Resist.">Resist</option>
+                                                    <option value="28" title="Perform daring maneuvers on horseback without penalties.">Riding</option>
+                                                    <option value="29" title="Run double the distance of others, outrun pursuers in the open.">Running</option>
+                                                    <option value="30" title="Operate marine vessels, with appropriate crew.">Sailing</option>
+                                                    <option value="31" title="Achieve renown in a specific topic. You are published.">Scholar</option>
+                                                    <option value="32" title="Find all kinds of clues, information, or traps in the immediate area.">Scout</option>
+                                                    <option value="33" title="When using a shield, roll this skill instead of Defense. Additionally, add the Defense bonus of your shield to this skill.">Shield Fighting</option>
+                                                    <option value="34" title="Harvest a slain beast for pelt or hide in 1D4 rounds">Skinning</option>
+                                                    <option value="35" title="Roll to study spells with time and materials in a safe place. Gain 1 hero point per day invested thus, spendable only on spells.">Spell Research</option>
+                                                    <option value="36" title="Go unnoticed when moving. Easier if perfectly still or hidden.">Stealth</option>
+                                                    <option value="37" title="You know shady people and back-alley secrets.">Streetwise</option>
+                                                    <option value="38" title="If your heart is hit, a lethal injury, roll this skill instantly (it will be crossed off). On a success, you fight off death's embrace for 1 round. Also rolled when refusing to rest and pushing onward after a lack of sleep.">Survival</option>
+                                                    <option value="39" title="Swim twice as far as others. Stay under water twice as long.">Swimming</option>
+                                                    <option value="40" title="Add a die of your attack type on the next attack you make.">Take Aim</option>
+                                                    <option value="41" title="Find obscured foes in the wild.">Tracking</option>
+                                                    <option value="42" title="Get more value out of trade despite hagglers, bad leverage, distractions, or scammers.">Trading</option>
+                                                </select>
+                                                <button type="button" onclick="addSkill('#ddlSkills');" class="btn btn-primary">Add</button>
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="modal" id="skillErrorModal">
+                                                <div class="modal-dialog modal-dialog-centered">
+                                                    <div class="modal-content redDoubleBorder">
+                                                        <div class="modal-header">
+                                                            <h4 class="modal-title text-danger">NOTICE!</h4>
+                                                            <button type="button" class="btn-close" onclick="$('#skillErrorModal').hide();" data-bs-dismiss="modal"></button>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <span class="text-primary text-bold" id="skillModalMsg">Test Message</span>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                        <button type="button" class="btn btn-danger" onclick="$('#skillErrorModal').hide();" data-bs-dismiss="modal">Close</button>
+                                                    </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <table id="selSkills" class="table-info" style="max-width:contain;">
+                                                
+                                            </table>
+                                        </div>
+                                    </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="mt-5 p-4 bg-dark text-white text-center">
+    <p>Footer</p>
+</div>

@@ -1,0 +1,87 @@
+h1 {
+  text-align: center;
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: normal;
+}
+
+.textCrownAndSkullDefault {
+    font-family: "Century Gothic";
+    font-weight: normal;
+    font-size: 12px;
+}
+
+.txtBoxW250 {
+    width: 400px !important;
+}
+
+.textBold {
+    font-weight: bold;
+}
+
+.textNormal {
+    font-weight: normal;
+}
+
+.skillCol1 {
+    min-width: 150px;
+    vertical-align: top;
+    font-family: "Century Gothic";
+    padding-left:5px;
+}
+
+.skillCol2 {
+    min-width: 650px;
+    vertical-align: top;
+    font-family: "century gothic";
+}
+
+.skillCol3 {
+    min-width:115px;
+    vertical-align:middle;
+    font-family: "Century Gothic";
+}
+
+.redBorderLeft {
+    border-top: 2px solid red;
+    border-left: 2px solid red;
+    border-bottom: 2px solid red;
+}
+
+.redBorderMid {
+    border-top: 2px solid red;
+    border-bottom: 2px solid red;
+}
+
+.redBorderRight {
+    border-top: 2px solid red;
+    border-right: 2px solid red;
+    border-bottom: 2px solid red;
+}
+
+.redDoubleBorder {
+    border: 3px double red;
+}
+
+hr {
+    height: 1px;
+    background-color: #000;
+    border: none;
+    margin-top: 5px;
+    margin-bottom: 4px;
+}
+
+.checkboxtext {
+    /* Checkbox text */
+    font-size: 110%;
+    display: inline;
+}
+
+input[type=checkbox] {
+    /* Double-sized Checkboxes */
+    -ms-transform: scale(1.15); /* IE */
+    -moz-transform: scale(1.15); /* FF */
+    -webkit-transform: scale(1.15); /* Safari and Chrome */
+    -o-transform: scale(1.15); /* Opera */
+    transform: scale(1.15);
+    padding: 10px;
+}
