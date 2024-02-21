@@ -1,0 +1,158 @@
+﻿@page
+@model blank.Pages.CompaniesModel
+@{
+}
+<link rel="stylesheet" href="~/css/Companies.css">
+<script src="~/js/companies.js"></script>
+
+<div class="container-fluid">
+    <input type="hidden" id="pageName" value="Companies" />
+    <span hidden><a id="csStingray" asp-page="/CaseStudies/Stingray"></a></span>
+    <div class="modal" id="positionModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title text-white"><span id="posModalTitle"></span></h4>
+                    <button type="button" class="close text-bg-danger" data-dismiss="modal" arial-label="Close" onclick="closeModal('#positionModal');">
+                        <span aria-hidden="true" >X</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <span id="posModalBody"></span>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal" aria-label="Close" onclick="closeModal('#positionModal');">
+                        Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card">            
+        <div class="card-header" data-bs-toggle="collapse" href="#aps" role="button" aria-controls="aps" onclick="toggleCarat('c1');">
+            <a href="https://aps.com"><img src="https://www.aps.com/Assets/Images/logo.svg" style="height:32px;" /></a>
+            <h3>Arizona Public Service Company<img id="c1d" style="height:32px;" class="float-end" src="~/media/img/downcarat.png" /><img id="c1u" style="height:32px; display:none;" class="float-end" src="~/media/img/upcarat.png" /></h3>
+        </div>
+        <div class="collapse" id="aps">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-12">
+                        <a href="#" data-toggle="modal" data-target="#apsPosModal" onclick="openModal('aps');"><h4>IT Solutions Analyst III</h4></a>
+                        <h5>July, 2022 - January, 2024</h5>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <ul>
+                            <li>Tech Lead for project to update <a onclick='window.open("https://aps.com", "_blank")' href="#">aps.com</a> from Sitecore 9.3 to Sitecore 10.3</li>
+                            <li>Implemented 3rd Party integration for the <a onclick='window.open("https://www.aps.com/en/Residential/Service-Plans/Understanding-Solar");' href="#">Should I get solar?</a> SolarSmart tool.</li>
+                            <li title="Due to challenges with how configurations were organized and maintained originally, the code identifies the url in the browser to dynamically select the appropriate link.">Created solution to allow for links to 3rd party websites to be a non-production link in lower environments.</li>
+                            <li title="NOTE: Due to conflicts with the Sitecore upgrade project, this has not yet been migrated to the production environment as of Feb 20, 2024.">Migrated the internal site <a href="https://www.aps.com/en/About/Community/In-the-Community/Education/APS-Foundation">APS Foundation</a> to allow for separate dns entry to access.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="card">
+        <div class="card-header" data-bs-toggle="collapse" href="#ism" role="button" aria-controls="ism" onclick="toggleCarat('c2');">
+            <a onclick="window.open('https://www.ismworld.org/', '_blank');" href="#"><img style="height:32px;" src="https://www.ismworld.org/globalassets/masterpage/header/ism-logo-white.svg" /></a>
+            <h3>Institute for Supply Management<img id="c2d" style="height:32px;" class="float-end" src="~/media/img/downcarat.png" /><img id="c2u" style="height:32px; display:none;" class="float-end" src="~/media/img/upcarat.png" /></h3>
+        </div>
+        <div class="collapse" id="ism">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-12">
+                        <a href="#" onclick="openModal('ism');'"><h4>Sr. Web Developer</h4></a>
+                        <h5>October, 2021 - May, 2022</h5>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <ul>
+                            <li>Develop for .Net Core 3.1 application, including SQL Server/Back-end integrations.</li>
+                            <li>Integrate both internal and third-party web api's into technology stack as needed.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header" data-bs-toggle="collapse" href="#jcsoft" role="button" aria-controls="jcsoft" onclick="toggleCarat('c3');">
+            <img title="Company not currently doing business." style="height:32px;" src="~/media/img/consultinglogo.jpg"/>
+            <h3>JConrad Software Consulting, llc.<img id="c3d" style="height:32px;" class="float-end" src="~/media/img/downcarat.png" /><img id="c3u" style="height:32px; display:none;" class="float-end" src="~/media/img/upcarat.png" /></h3>
+        </div>
+        <div class="collapse" id="jcsoft">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-12">
+                        <a href="#" onclick="openModal('jcs');"><h4>Technical Solutions Specialist</h4></a>
+                        <h5>January, 2020 - May, 2021</h5>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <ul>
+                            <li>Consult with clients to design software integrations with legacy and vendor systems.</li>
+                            <li>Import data from old databases into new databases, including platforms that are not compatible.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-header" data-bs-toggle="collapse" href="#legacy" role="button" aria-controls="legacy" onclick="toggleCarat('c4');">
+            <img title="Open company website." style="height:32px;" src="https://www.mylegacyinsurance.com/imgs/legacylogocolor.png" onclick="window.open('https://www.mylegacyinsurance.com/', '_blank');" />
+            <h3>Legacy Insurance Services, Inc.<img id="c4d" style="height:32px;" class="float-end" src="~/media/img/downcarat.png" /><img id="c4u" style="height:32px; display:none;" class="float-end" src="~/media/img/upcarat.png" /></h3>
+        </div>
+        <div class="collapse" id="legacy">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-12">
+                        <a href="#" onclick="openModal('lgy');"><h4>Sr. Web Developer/Team Lead</h4></a>
+                        <h5>November, 2016 - January, 2020</h5>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <ul>
+                            <li>Stabilized legacy software (<a href="#" onclick="openModal('stingray');">Stingray from Maximum Processing</a>) and bring production service levels to 99.99% from estimated 95% based on prior records.</li>
+                            <li>Implemented middle-tier web api platform to enable migration of business logic from outdated software platform.</li>
+                            <li>Created and maintained new SQL Server Database for new application. Added additional reporting and error alerts to improve both older site and new middle-tier application performance and IT Response times.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-header" data-bs-toggle="collapse" href="#cvs" role="button" aria-controls="cvs" onclick="toggleCarat('c5');">
+            <img title="Open company website." style="height:32px;" src="https://www.cvshealth.com/content/dam/enterprise/cvs-enterprise/logos/CVS_Health_logo.svg" onclick="window.open('https://cvshealth.com', '_blank');" />
+            <h3>CVS Health (MED-D/Digital)<img id="c5d" style="height:32px;" class="float-end" src="~/media/img/downcarat.png" /><img id="c5u" style="height:32px; display:none;" class="float-end" src="~/media/img/upcarat.png" /></h3>
+        </div>
+        <div class="collapse" id="cvs">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-12">
+                        <a href="#" onclick="openModal('cvs');'"><h4>Front-End Analyst</h4></a>
+                        <h5>April, 2013 - June, 2016</h5>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12">
+                        <ul>
+                            <li>Spearheaded implementation of Test-Driven Development process.</li>
+                            <li>Worked on project to modernize the agent website portal from Web Forms into MVC</li>
+                            <li>Build a work assignment/log application that allowed field agents to send messages to input queues and allowed managers to assign work as needed.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

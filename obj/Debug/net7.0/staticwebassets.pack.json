@@ -1,0 +1,81 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\Screech\\source\\repos\\w3Schools\\obj\\Debug\\net7.0\\scopedcss\\projectbundle\\blank.bundle.scp.css",
+      "PackagePath": "staticwebassets\\blank.bundle.scp.css"
+    },
+    {
+      "Id": "C:\\Users\\Screech\\source\\repos\\w3Schools\\wwwroot\\css\\Companies.css",
+      "PackagePath": "staticwebassets\\css\\Companies.css"
+    },
+    {
+      "Id": "C:\\Users\\Screech\\source\\repos\\w3Schools\\wwwroot\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Screech\\source\\repos\\w3Schools\\wwwroot\\css\\styles.css",
+      "PackagePath": "staticwebassets\\css\\styles.css"
+    },
+    {
+      "Id": "C:\\Users\\Screech\\source\\repos\\w3Schools\\wwwroot\\favicon.ico",
+      "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\Screech\\source\\repos\\w3Schools\\wwwroot\\js\\Common.js",
+      "PackagePath": "staticwebassets\\js\\Common.js"
+    },
+    {
+      "Id": "C:\\Users\\Screech\\source\\repos\\w3Schools\\wwwroot\\js\\Companies.js",
+      "PackagePath": "staticwebassets\\js\\Companies.js"
+    },
+    {
+      "Id": "C:\\Users\\Screech\\source\\repos\\w3Schools\\wwwroot\\media\\img\\Add.jpg",
+      "PackagePath": "staticwebassets\\media\\img\\Add.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Screech\\source\\repos\\w3Schools\\wwwroot\\media\\img\\ConsultingLogo.jpg",
+      "PackagePath": "staticwebassets\\media\\img\\ConsultingLogo.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Screech\\source\\repos\\w3Schools\\wwwroot\\media\\img\\DownCarat.jpg",
+      "PackagePath": "staticwebassets\\media\\img\\DownCarat.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Screech\\source\\repos\\w3Schools\\wwwroot\\media\\img\\DownCarat.png",
+      "PackagePath": "staticwebassets\\media\\img\\DownCarat.png"
+    },
+    {
+      "Id": "C:\\Users\\Screech\\source\\repos\\w3Schools\\wwwroot\\media\\img\\Sub.jpg",
+      "PackagePath": "staticwebassets\\media\\img\\Sub.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Screech\\source\\repos\\w3Schools\\wwwroot\\media\\img\\Trash.jpg",
+      "PackagePath": "staticwebassets\\media\\img\\Trash.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Screech\\source\\repos\\w3Schools\\wwwroot\\media\\img\\UpCarat.jpg",
+      "PackagePath": "staticwebassets\\media\\img\\UpCarat.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Screech\\source\\repos\\w3Schools\\wwwroot\\media\\img\\UpCarat.png",
+      "PackagePath": "staticwebassets\\media\\img\\UpCarat.png"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.blank.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.build.blank.props",
+      "PackagePath": "build\\blank.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildMultiTargeting.blank.props",
+      "PackagePath": "buildMultiTargeting\\blank.props"
+    },
+    {
+      "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.buildTransitive.blank.props",
+      "PackagePath": "buildTransitive\\blank.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
